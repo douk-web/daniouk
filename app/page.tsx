@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Home3DBackground from '@/components/Home3DBackground';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const projects = [
   {
     title: 'Daedalus avionics system',
@@ -10,7 +12,7 @@ const projects = [
       'Designed and built an embedded avionics system on an Arduino Nano, integrating a BMP388, BNO055 IMU, GPS module, and microSD storage for in-flight data acquisition. Soldered and tested the circuitry on a protoboard, then flew and recovered it with all sensors fully intact.',
     stack: ['Arduino IDE', 'Circuiting', 'Soldering'],
     link: '#',
-    image: '/projects/daedalus-avionics.jpg',
+    image: `${basePath}/projects/daedalus-avionics.jpg`,
   },
   {
     title: 'Project Phoenix — Rocket Propulsion Laboratory',
@@ -18,7 +20,7 @@ const projects = [
       'Built the avionics integration for a 13-foot liquid methalox rocket, programming microcontrollers in Arduino to interface with GPS, altitude, and pressure sensors. Collaborated on instrumenting the propulsion test stand.',
     stack: ['Arduino', 'Avionics', 'Propulsion testing'],
     link: '#',
-    image: '/projects/phoenix-rocket.jpg',
+    image: `${basePath}/projects/phoenix-rocket.jpg`,
   },
   {
     title: 'Payload structure',
@@ -26,7 +28,7 @@ const projects = [
       'Designed a structure in SolidWorks to hold two 130.5g payloads at fixed positions on a pivoting thrust beam. Ran force and torque analysis and lifted the payload into horizontal equilibrium.',
     stack: ['SolidWorks', '3D printing'],
     link: '#',
-    image: '/projects/payload-structure.jpg',
+    image: `${basePath}/projects/payload-structure.jpg`,
   },
   {
     title: 'Autonomous line-following robot',
@@ -34,7 +36,7 @@ const projects = [
       'Assembled a line-tracking robot around an ESP32 and a custom CAD chassis, implementing PID control and PWM motor regulation from photoresistor feedback to optimize autonomous steering.',
     stack: ['ESP32', 'PID control', 'Onshape'],
     link: '#',
-    image: '/projects/line-following-robot.jpg',
+    image: `${basePath}/projects/line-following-robot.jpg`,
   },
   {
     title: 'Soccer ball kick simulation',
@@ -42,7 +44,7 @@ const projects = [
       'Built a MATLAB simulation modeling a free kick under gravitational and Magnus forces, generating 3D trajectory plots against the goal, keeper, and defenders — optimized to run in under five minutes.',
     stack: ['MATLAB'],
     link: 'https://github.com/yourusername/soccer-kick-simulation',
-    image: '/projects/soccer-sim-1.jpg',
+    image: `${basePath}/projects/soccer-sim-1.jpg`,
   },
 ];
 
@@ -82,7 +84,7 @@ export default function Home() {
               View projects
             </a>
             <a
-              href="/resume.pdf"
+              href={`${basePath}/resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               onPointerDownCapture={(e) => e.stopPropagation()}

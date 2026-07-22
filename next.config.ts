@@ -1,8 +1,13 @@
 import type { NextConfig } from 'next';
 
+const basePath = '/daniouk';
+
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/daniouk',
+  basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
   },
