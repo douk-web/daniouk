@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import Home3DBackground from '@/components/Home3DBackground';
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+import { basePath } from '@/lib/basePath';
 
 const projects = [
   {
